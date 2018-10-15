@@ -40,15 +40,15 @@
 
     <script id="item" type="text/x-handlebars-template">
         {{#each product}}
-        <div class="border col-sm-12 col-lg-6">
+        <div class="product border col-sm-12 col-lg-6 p-2">
             <div class="row">
-                <div class="col-sm-12 col-lg-4">
+                <div class="col-sm-4 col-lg-4">
                     <img src="{{imageURL}}" alt="Item picture" width="100px;">
                 </div>
-                <div class="col-sm-12 col-lg-4">
-                    <p>{{name}}</p>
-                    <p>{{price}}</p>
-                    <p>{{instock}}</p>
+                <div class="col-sm-4 col-lg-4">
+                    <p class="name">{{name}}</p>
+                    <p>Price: ${{price}}</p>
+                    <p>Instock: {{instock}}</p>
                 </div>
             </div>
             <p>{{description}}</p>
