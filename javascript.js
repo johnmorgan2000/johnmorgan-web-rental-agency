@@ -10,6 +10,12 @@ function renderProduct(inv) {
     document.getElementById("product").insertAdjacentHTML("beforeend", html);
 }
 
+function refreshProduct(inv) {
+    var product = document.querySelector("#product");
+    product.innerHTML = "";
+    renderProduct(INVENTORY);
+}
+
 // Adds eventlisters to the buttons to add it to cart
 function selectItem() {
     var products = document.querySelectorAll(".product");
@@ -19,6 +25,7 @@ function selectItem() {
             addToCart(cart, INVENTORY, i);
             refreshCart(cart);
             viewCart(cart);
+            refreshProduct(INVENTORY);
         });
     }
 }
@@ -59,6 +66,8 @@ function removeFromCart(cart, inv) {
             refreshCart(cart);
             viewCart(cart);
             cartUnlock(cart);
+            cartAmount(cart);
+            refreshProduct(INVENTORY);
         });
     }
 }
@@ -91,6 +100,8 @@ function cartAmount(cart) {
     for (i of cart) {
         sum += 1;
     }
+    let btn = document.getElementById("cart-button");
+    btn.innerHTML = `Cart (${sum})`;
     return sum;
 }
 
@@ -109,11 +120,14 @@ function cartUnlock(cart) {
     });
 }
 
-document.getElementById("cart-button").addEventListener("click", () => {
+window.addEventListener("click", () => {
     removeFromCart(cart, INVENTORY);
+    selectItem();
+    cartAmount(cart);
 });
 
 renderProduct(INVENTORY);
-selectItem();
+
 rent();
+cartAmount(cart);
 cartUnlock(cart);
