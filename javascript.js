@@ -30,8 +30,37 @@ function addToCart(cart, inv, item) {
             obj.instock -= 1;
             cart.push(obj);
         }
+}
 
-    console.log(cart);
+// when the user clicks the remove button, that item is removed from cart and added back to stock
+function removeFromCart(cart, inv) {
+    let items = document.querySelectorAll("#cart ul li");
+    for (const item of items) {
+        let btn = item.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            let name = item.querySelector(".name").innerText;
+
+            var elementPos = cart
+                .map(function(x) {
+                    return x.name;
+                })
+                .indexOf(name);
+
+            var obj = cart[elementPos];
+
+            for (i of inv) {
+                if (obj.name === i.name) {
+                    cart.splice(elementPos, 1);
+                    i.instock++;
+                }
+            }
+
+            refreshCart(cart);
+            viewCart(cart);
+            cartUnlock(cart);
+        });
+    }
 }
 
 // Creates the cart menu
@@ -49,14 +78,42 @@ function refreshCart(cart) {
     var cartMenu = document.querySelector("#cart ul");
     cartMenu.innerHTML = "";
 }
-
+// The rent button displays the form for the user to validate
 function rent() {
     const btn = document.querySelector("#cart button");
     btn.addEventListener("click", () => {
         document.querySelector("#payment-form").style.display = "block";
     });
 }
+// Counts how many items are in the cart
+function cartAmount(cart) {
+    let sum = 0;
+    for (i of cart) {
+        sum += 1;
+    }
+    return sum;
+}
+
+// enables the cart button if cart is not empty
+function cartUnlock(cart) {
+    let btn = document.querySelector("#cart-button");
+    btn.disabled = true;
+    window.addEventListener("click", () => {
+        let sum = cartAmount(cart);
+        console.log(sum);
+        if (sum > 0) {
+            btn.disabled = false;
+        } else if (sum === 0) {
+            btn.disabled = true;
+        }
+    });
+}
+
+document.getElementById("cart-button").addEventListener("click", () => {
+    removeFromCart(cart, INVENTORY);
+});
 
 renderProduct(INVENTORY);
 selectItem();
 rent();
+cartUnlock(cart);
