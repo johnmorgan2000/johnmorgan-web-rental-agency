@@ -11,24 +11,6 @@
 </head>
 
 <body>
-    <!-- The navbar ontop of the page that contains the shopping cart button -->
-
-    <nav class="navbar navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">(Name)</a>
-            <div class="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <button id="cart-button" class="btn dropdown-toggle">
-                    (cart)
-                </button>
-                <div id="cart" class="dropdown-menu dropdown-menu-right">
-                    <ul class="list-group">
-                        <!-- This is where the cart menu will be added -->
-                    </ul>
-                    <button type="submit">Rent</button>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <!-- The form that must be submitted in order to rent -->
     <div id="form-container" class="row justify-content-around ">
@@ -57,11 +39,33 @@
                     <input type="radio" name="payment" id="card">
                     <label>Card</label>
                     <br />
+                    <button type="submit">Cancel</button>
                     <button type="submit">Submit</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- The navbar ontop of the page that contains the shopping cart button -->
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">(Name)</a>
+            <div class="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="cart-button" class="btn dropdown-toggle">
+                    (cart)
+                </button>
+                <div id="cart" class="dropdown-menu dropdown-menu-right">
+                    <ul class="list-group">
+                        <!-- This is where the cart menu will be added -->
+                    </ul>
+                    <button type="submit">Rent</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
 
     <!-- the main content of the page that holds the product being rented -->
 
