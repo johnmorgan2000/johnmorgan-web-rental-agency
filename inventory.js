@@ -1,15 +1,50 @@
 const INVENTORY = [
     {
-        name: "Gameboy",
-        category: "Games",
-        imageURL: "images/gameboy.jpeg",
-        description: "It's just a gameboy",
-        instock: 5,
-        price: 32.5
+        name: "Item",
+        category: ["Popular"],
+        imageURL: "images/placeholder.png",
+        description: "Description",
+        instock: 10,
+        price: 10
     },
     {
-        name: "Xbox",
-        category: "Games",
-        imageURL: "images/xbox.jpeg"
+        name: "Item2",
+        category: ["Popular"],
+        imageURL: "images/placeholder.png",
+        description: "Description",
+        instock: 10,
+        price: 10
+    },
+    {
+        name: "Item3",
+        category: ["Popular"],
+        imageURL: "images/placeholder.png",
+        description: "Description",
+        instock: 10,
+        price: 10
+    },
+    {
+        name: "Item4",
+        category: ["Popular"],
+        imageURL: "images/placeholder.png",
+        description: "Description",
+        instock: 10,
+        price: 10
+    },
+    {
+        name: "Item5",
+        category: ["Popular"],
+        imageURL: "images/placeholder.png",
+        description: "Description",
+        instock: 10,
+        price: 10
+    },
+    {
+        name: "Item6",
+        category: ["Popular"],
+        imageURL: "images/placeholder.png",
+        description: "Description",
+        instock: 10,
+        price: 10
     }
 ];
