@@ -16,14 +16,21 @@ function selectItem() {
     for (const i of products) {
         let btn = i.querySelector("button");
         btn.addEventListener("click", () => {
-            console.log(i.querySelector(".name").innerText);
+            addToCart(cart, INVENTORY, i);
         });
     }
 }
 
-// Takes the product from inventory and add it to cart
-function addToCart(cart, inv) {
-    cart.push();
+// Takes the product from inventory and adds it to cart
+function addToCart(cart, inv, item) {
+    for (obj of inv)
+        if (obj.name === item.querySelector(".name").innerText) {
+            obj.instock -= 1;
+            cart.push(obj);
+            console.log(obj);
+        }
+
+    console.log(cart);
 }
 
 renderProduct(INVENTORY);
