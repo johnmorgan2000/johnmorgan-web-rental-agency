@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
 </head>
 
-<body>
+<body class="bg-light">
 
     <!-- The form that must be submitted in order to rent -->
     <div id="form-container" class="row justify-content-around ">
@@ -39,8 +39,8 @@
                     <input type="radio" name="payment" id="card">
                     <label>Card</label>
                     <br />
-                    <button type="submit">Cancel</button>
-                    <button type="submit">Submit</button>
+                    <button id="cancel">Cancel</button>
+                    <button type="submit" id="submit" disabled>Submit</button>
                 </div>
             </form>
         </div>
@@ -69,7 +69,7 @@
 
     <!-- the main content of the page that holds the product being rented -->
 
-    <div class="container">
+    <div id="content" class="container">
         <main>
             <div id="categories">
             </div>
@@ -86,7 +86,7 @@
 
     <script id="item" type="text/x-handlebars-template">
         {{#each product}}
-        <div class="product border col-sm-12 col-lg-6 p-2">
+        <div class="product border col-sm-12 col-lg-6 p-2 m-2">
             <div class="row">
                 <div class="col-sm-4 col-lg-4">
                     <img src="{{imageURL}}" alt="Item picture" width="100px;">
@@ -109,14 +109,12 @@
     <script id="cart-content" type="text/x-handlebars-template">
             {{#each cart}}
             <li class="list-group-item">
-                <p>{{name}}</p>
-                <p>{{price}}</p>  
+                <p class="name">{{name}}</p>
+                <p>{{price}}</p> 
+                <button>Remove</button> 
             </li>
             {{/each}}
     </script>
-
-
-
 
 
     <script src="handlebars/handlebar.js"></script>

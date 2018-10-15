@@ -14,6 +14,7 @@ function refreshProduct(inv) {
     var product = document.querySelector("#product");
     product.innerHTML = "";
     renderProduct(INVENTORY);
+    selectItem();
 }
 
 // Adds eventlisters to the buttons to add it to cart
@@ -26,6 +27,7 @@ function selectItem() {
             refreshCart(cart);
             viewCart(cart);
             refreshProduct(INVENTORY);
+            cartAmount(cart);
         });
     }
 }
@@ -60,12 +62,12 @@ function removeFromCart(cart, inv) {
                 if (obj.name === i.name) {
                     cart.splice(elementPos, 1);
                     i.instock++;
+                    break;
                 }
             }
 
             refreshCart(cart);
             viewCart(cart);
-            cartUnlock(cart);
             cartAmount(cart);
             refreshProduct(INVENTORY);
         });
@@ -105,29 +107,19 @@ function cartAmount(cart) {
     return sum;
 }
 
-// enables the cart button if cart is not empty
-function cartUnlock(cart) {
-    let btn = document.querySelector("#cart-button");
-    btn.disabled = true;
-    window.addEventListener("click", () => {
-        let sum = cartAmount(cart);
-        console.log(sum);
-        if (sum > 0) {
-            btn.disabled = false;
-        } else if (sum === 0) {
-            btn.disabled = true;
-        }
-    });
-}
+//Cancel the form
+document.querySelector("#cancel").addEventListener("click", () => {
+    document.querySelector("#payment-form").style.display = "none";
+});
 
-window.addEventListener("click", () => {
+//restarts the removeFromCart Function
+document.querySelector("#cart-button").addEventListener("click", () => {
     removeFromCart(cart, INVENTORY);
-    selectItem();
-    cartAmount(cart);
 });
 
 renderProduct(INVENTORY);
 
+selectItem();
 rent();
 cartAmount(cart);
-cartUnlock(cart);
+// cartUnlock(cart);

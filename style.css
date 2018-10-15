@@ -1,6 +1,7 @@
 #payment-form {
     display: none;
     position: fixed;
+    height: 100%;
     z-index: 1;
     background-color: white;
     padding: 5px;
