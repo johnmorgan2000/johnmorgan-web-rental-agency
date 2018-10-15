@@ -11,19 +11,60 @@
 </head>
 
 <body>
+    <!-- The navbar ontop of the page that contains the shopping cart button -->
+
     <nav class="navbar navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">(Name)</a>
             <div class="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <button class="btn dropdown-toggle">
+                <button id="cart-button" class="btn dropdown-toggle">
                     (cart)
                 </button>
-                <div class="dropdown-menu">
-                    content
+                <div id="cart" class="dropdown-menu dropdown-menu-right">
+                    <ul class="list-group">
+                        <!-- This is where the cart menu will be added -->
+                    </ul>
+                    <button type="submit">Rent</button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- The form that must be submitted in order to rent -->
+    <div id="form-container" class="row justify-content-around ">
+        <div id="payment-form" class="col-sm-12 col-lg-6">
+            <form name="purchase">
+                <label class="d-block text-center">Name <br />
+                    <input type="text" id="customer-name">
+                </label>
+
+                <label class="d-block text-center">Email<br />
+                    <input type="email" id="customer-email">
+                </label>
+
+                <label class="d-block text-center">Phone Number<br />
+                    <input type="text" id="customer-phone">
+                </label>
+
+                <label class="d-block text-center">Address<br />
+                    <input type="text" id="customer-address">
+                </label>
+                <div class="text-center">
+                    <input type="radio" name="payment" id="cash">
+                    <label>Cash</label>
+                    <input type="radio" name="payment" id="check">
+                    <label>Check</label>
+                    <input type="radio" name="payment" id="card">
+                    <label>Card</label>
+                    <br />
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- the main content of the page that holds the product being rented -->
+
     <div class="container">
         <main>
             <div id="categories">
@@ -37,6 +78,7 @@
         </main>
     </div>
 
+    <!-- Each product is loaded in and displayed in this manner -->
 
     <script id="item" type="text/x-handlebars-template">
         {{#each product}}
@@ -52,35 +94,27 @@
                 </div>
             </div>
             <p>{{description}}</p>
-            <button type="submit">Rent</button>
+            <button type="submit">Add To Cart</button>
         </div>
     
         {{/each}}
     </script>
-    <script id="renting-form" type="text/x-handlebars-template">
-        <form name="purchase">
-        <label>Name</label>
-        <input type="text" id="customer-name">
 
-        <label>Email</label>
-        <input type="email" id="customer-email">
+    <!-- The contents of the cart dropdown -->
 
-        <label>Phone Number</label>
-        <input type="text" id="customer-phone">
-
-        <label>Address</label>
-        <input type="text" id="customer-address">
-
-        <input type="radio" name="payment" id="cash">
-        <label>Cash</label>
-        <input type="radio" name="payment" id="check">
-        <label>Check</label>
-        <input type="radio" name="payment" id="card">
-        <label>Card</label>
-
-        <button type="submit">Submit</button>
-    </form>
+    <script id="cart-content" type="text/x-handlebars-template">
+            {{#each cart}}
+            <li class="list-group-item">
+                <p>{{name}}</p>
+                <p>{{price}}</p>  
+            </li>
+            {{/each}}
     </script>
+
+
+
+
+
     <script src="handlebars/handlebar.js"></script>
     <script src="inventory.js"></script>
     <script src="javascript.js"></script>
