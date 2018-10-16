@@ -32,12 +32,24 @@ function selectItem() {
     }
 }
 
+function isInStock(item) {
+    if (item.instock > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // Takes the product from inventory and adds it to cart
 function addToCart(cart, inv, item) {
     for (obj of inv)
         if (obj.name === item.querySelector(".name").innerText) {
-            obj.instock -= 1;
-            cart.push(obj);
+            if (isInStock(obj)) {
+                obj.instock -= 1;
+                cart.push(obj);
+            } else {
+                alert("Sorry, this is out of stock.");
+            }
         }
 }
 

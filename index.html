@@ -67,8 +67,9 @@
 
     <!-- The navbar ontop of the page that contains the shopping cart button -->
 
-    <nav class="navbar my-primary-background">
+    <nav class="navbar">
         <div class="container">
+
             <h1>Ping-Pong-o</h1>
             <div class="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <button id="cart-button" class="py-1 px-2 d-flex border-0 rounded">
@@ -79,9 +80,12 @@
                     <ul class="list-group">
                         <!-- This is where the cart menu will be added -->
                     </ul>
-                    <button type="submit">Rent</button>
+                    <div class="text-center">
+                        <button type="submit">Rent</button>
+                    </div>
                 </div>
             </div>
+
         </div>
     </nav>
 
@@ -104,19 +108,21 @@
 
     <script id="item" type="text/x-handlebars-template">
         {{#each product}}
-        <div class="product border col-sm-12 col-lg-5 p-2 m-2">
+        <div class="product col-sm-12 col-lg-5 p-2 mx-2 my-2">
             <div class="row">
-                <div class="col-sm-4 col-lg-4">
-                    <img src="{{imageURL}}" alt="Item picture" width="100px;">
+                <div class="col-sm-3 col-lg-4">
+                    <img class="rounded"src="{{imageURL}}" alt="Item picture" width="125px" height="125px">
                 </div>
-                <div class="col-sm-4 col-lg-4">
+                <div class="col-sm-6 col-lg-4">
                     <p class="name">{{name}}</p>
                     <p>Price: ${{price}}</p>
                     <p>Instock: {{instock}}</p>
                 </div>
             </div>
-            <p>{{description}}</p>
-            <button type="submit">Add To Cart</button>
+            <p class="my-2">{{description}}</p>
+            <div class="text-center">
+                <button id="add-button" type="submit">Add To Cart</button>
+            </div>
         </div>
     
         {{/each}}
@@ -126,10 +132,12 @@
 
     <script id="cart-content" type="text/x-handlebars-template">
             {{#each cart}}
-            <li class="list-group-item">
-                <p class="name">{{name}}</p>
-                <p>{{price}}</p> 
-                <button>Remove</button> 
+            <li class="list-group-item cart-item">
+                <div class="d-flex">
+                    <span class="name">{{name}}</span>
+                    {{price}} 
+                    <button>Remove</button>
+                </div>
             </li>
             {{/each}}
     </script>
