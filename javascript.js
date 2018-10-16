@@ -107,9 +107,90 @@ function cartAmount(cart) {
     return sum;
 }
 
+// checks if the name input is valid
+function nameIsValid(input) {
+    if (input.value.match(/[a-zA-Z ]/)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//checks if the email input is valid
+function emailIsValid(input) {
+    if (input.value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//checks if the phone input is valid
+function phoneIsValid(input) {
+    if (
+        input.value.match(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) ||
+        input.value.match(/[0-9]{9}/)
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function stateIsValid(input) {
+    if (input.value.match(/[a-zA-z]{2}/)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function zipIsValid(input) {
+    if (input.value.match(/^\d{5}$/)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function streetIsValid(input) {
+    if (input.value !== "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//checks if the form is valid
+function formValidate() {
+    let form = document.forms["purchase"];
+    let btn = document.querySelector("#submit");
+
+    let name = form.querySelector("#customer-name");
+    let email = form.querySelector("#customer-email");
+    let phone = form.querySelector("#customer-phone");
+    let state = form.querySelector("#customer-state");
+    let zip = form.querySelector("#customer-zip");
+    let street = form.querySelector("#customer-street");
+
+    if (
+        nameIsValid(name) &&
+        emailIsValid(email) &&
+        phoneIsValid(phone) &&
+        stateIsValid(state) &&
+        zipIsValid(zip) &&
+        streetIsValid(street)
+    ) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
+}
+
 //Cancel the form
-document.querySelector("#cancel").addEventListener("click", () => {
+document.querySelector("#cancel").addEventListener("click", event => {
     document.querySelector("#payment-form").style.display = "none";
+    event.preventDefault();
 });
 
 //restarts the removeFromCart Function
@@ -117,9 +198,14 @@ document.querySelector("#cart-button").addEventListener("click", () => {
     removeFromCart(cart, INVENTORY);
 });
 
+document.querySelector("#unlock").addEventListener("click", event => {
+    formValidate();
+    event.preventDefault();
+});
+
 renderProduct(INVENTORY);
 
 selectItem();
 rent();
 cartAmount(cart);
-// cartUnlock(cart);
+formValidate();

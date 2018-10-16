@@ -22,6 +22,7 @@
 
                 <label class="d-block text-center">Email<br />
                     <input type="email" id="customer-email">
+
                 </label>
 
                 <label class="d-block text-center">Phone Number<br />
@@ -29,16 +30,29 @@
                 </label>
 
                 <label class="d-block text-center">Address<br />
-                    <input type="text" id="customer-address">
+                    <input type="text" id="customer-state" placeholder="State Abbr">
+                    <br />
+                    <input type="text" id="customer-zip" placeholder="Zip Code">
+                    <br />
+                    <input type="text" id="customer-street" placeholder="Street">
+
                 </label>
                 <div class="text-center">
-                    <input type="radio" name="payment" id="cash">
+                    <input type="radio" name="payment" id="cash" checked>
                     <label>Cash</label>
                     <input type="radio" name="payment" id="check">
                     <label>Check</label>
                     <input type="radio" name="payment" id="card">
                     <label>Card</label>
                     <br />
+
+                </div>
+
+                <div class="text-center">
+                    <button id="unlock">Unlock Submit</button>
+                </div>
+
+                <div class="text-center">
                     <button id="cancel">Cancel</button>
                     <button type="submit" id="submit" disabled>Submit</button>
                 </div>
