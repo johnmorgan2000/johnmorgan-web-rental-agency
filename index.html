@@ -8,9 +8,14 @@
     <title>Rental</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
 </head>
 
 <body class="bg-light">
+
 
     <!-- The form that must be submitted in order to rent -->
     <div id="form-container" class="row justify-content-around ">
@@ -62,12 +67,13 @@
 
     <!-- The navbar ontop of the page that contains the shopping cart button -->
 
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar my-primary-background">
         <div class="container">
-            <a class="navbar-brand" href="#">(Name)</a>
+            <h1>Ping-Pong-o</h1>
             <div class="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <button id="cart-button" class="btn dropdown-toggle">
-                    (cart)
+                <button id="cart-button" class="py-1 px-2 d-flex border-0 rounded">
+                    <i id="shopping-cart" class="fas fa-shopping-cart fa-2x"></i>
+                    <p id="cart-number"></p>
                 </button>
                 <div id="cart" class="dropdown-menu dropdown-menu-right">
                     <ul class="list-group">
@@ -82,9 +88,9 @@
 
 
     <!-- the main content of the page that holds the product being rented -->
+    <main>
+        <div id="content" class="container">
 
-    <div id="content" class="container">
-        <main>
             <div id="categories">
             </div>
             <div id="market" class="">
@@ -92,15 +98,13 @@
 
                 </div>
             </div>
-
-        </main>
-    </div>
-
+        </div>
+    </main>
     <!-- Each product is loaded in and displayed in this manner -->
 
     <script id="item" type="text/x-handlebars-template">
         {{#each product}}
-        <div class="product border col-sm-12 col-lg-6 p-2 m-2">
+        <div class="product border col-sm-12 col-lg-5 p-2 m-2">
             <div class="row">
                 <div class="col-sm-4 col-lg-4">
                     <img src="{{imageURL}}" alt="Item picture" width="100px;">

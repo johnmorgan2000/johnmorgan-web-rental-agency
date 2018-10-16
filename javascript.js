@@ -102,8 +102,8 @@ function cartAmount(cart) {
     for (i of cart) {
         sum += 1;
     }
-    let btn = document.getElementById("cart-button");
-    btn.innerHTML = `Cart (${sum})`;
+    let p = document.getElementById("cart-button").querySelector("p");
+    p.innerHTML = `${sum}`;
     return sum;
 }
 
@@ -129,7 +129,7 @@ function emailIsValid(input) {
 function phoneIsValid(input) {
     if (
         input.value.match(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) ||
-        input.value.match(/[0-9]{9}/)
+        input.value.match(/[0-9]{10}/)
     ) {
         return true;
     } else {
@@ -137,6 +137,7 @@ function phoneIsValid(input) {
     }
 }
 
+// checks if the state input is valid
 function stateIsValid(input) {
     if (input.value.match(/[a-zA-z]{2}/)) {
         return true;
@@ -144,7 +145,7 @@ function stateIsValid(input) {
         return false;
     }
 }
-
+// checks if the zip input is valid
 function zipIsValid(input) {
     if (input.value.match(/^\d{5}$/)) {
         return true;
@@ -153,6 +154,7 @@ function zipIsValid(input) {
     }
 }
 
+//checks if the street input is valid
 function streetIsValid(input) {
     if (input.value !== "") {
         return true;
