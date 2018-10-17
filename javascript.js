@@ -202,11 +202,22 @@ function formValidate() {
     }
 }
 
+// gets the cart total
+function getTotal() {
+    let prices = document.querySelectorAll(".price");
+    total = 0;
+    for (price of prices) {
+        console.log(price.innerText);
+        total += parseFloat(price.innerText);
+    }
+    document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
+}
+
 // Puts The prices to the second decimal place
 Handlebars.registerHelper("moneyForm", function(obj) {
     var price = Handlebars.escapeExpression(obj);
     let newForm = Number(price).toFixed(2);
-    return `$${newForm}`;
+    return `${newForm}`;
 });
 
 //Cancel the form
@@ -217,6 +228,7 @@ document.querySelector("#cancel").addEventListener("click", event => {
 
 //restarts the removeFromCart Function
 document.querySelector("#cart-button").addEventListener("click", () => {
+    getTotal();
     removeFromCart(cart, INVENTORY);
 });
 
