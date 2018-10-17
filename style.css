@@ -15,6 +15,29 @@ body {
     min-width: 300px;
 }
 
+/* main button style */
+.add-button,
+#rent-button,
+.remove-button,
+#unlock,
+#cancel,
+#submit {
+    padding: 8px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+.add-button:hover,
+#rent-button:hover,
+.remove-button:hover,
+#unlock:hover,
+#cancel:hover,
+#submit:hover {
+    background-color: var(--hover-secondary);
+}
+
 /* Altering how to form is displayed to the user */
 #payment-form {
     display: none;
@@ -24,6 +47,13 @@ body {
     background-color: white;
     padding: 5px;
     border: 1px solid grey;
+}
+
+form[name="purchase"] input {
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    margin: 3px;
+    padding: 3px;
 }
 
 /* setting the style for the navbar */
@@ -97,23 +127,6 @@ main {
     font-weight: bold;
     font-size: 1.05rem;
     border-radius: 6px;
-}
-
-/* main button style */
-.add-button,
-#rent-button,
-.remove-button {
-    padding: 5px;
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-}
-.add-button:hover,
-#rent-button:hover,
-.remove-button:hover {
-    background-color: var(--hover-secondary);
 }
 
 /* customize cart menu and adds a scroll bar */
