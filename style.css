@@ -28,8 +28,13 @@ body {
 
 /* setting the style for the navbar */
 nav.navbar {
-    background-color: var(--secondary-color);
+    background: linear-gradient(var(--secondary-color), #7d3ec5);
     color: var(--primary-color);
+    border-bottom: 3px solid #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 #navbar-contents,
@@ -91,8 +96,9 @@ main {
 }
 
 /* main button style */
-#add-button,
-#rent-button {
+.add-button,
+#rent-button,
+.remove-button {
     padding: 5px;
     color: var(--secondary-color);
     background-color: var(--primary-color);
@@ -100,17 +106,25 @@ main {
     border: none;
     border-radius: 5px;
 }
-#add-button:hover,
-#rent-button:hover {
+.add-button:hover,
+#rent-button:hover,
+.remove-button:hover {
     background-color: var(--hover-secondary);
 }
 
-/* customize cart menu */
+/* customize cart menu and adds a scroll bar */
 .dropdown-menu {
     width: 250px;
+    height: 250px;
+    overflow: scroll;
 }
 #cart-item {
-    border-color: var(--secondary-color);
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#menu-head {
+    border-bottom: 3px solid var(--secondary-color);
 }
 
 /* .cart-item {
