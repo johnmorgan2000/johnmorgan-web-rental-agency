@@ -43,7 +43,7 @@ const INVENTORY = [
         name: "Super magic ball",
         category: ["Popular"],
         imageURL: "images/placeholder.png",
-        description: "Description",
+        description: "A unstoppable force of nature",
         instock: 1,
         price: 100000
     }
