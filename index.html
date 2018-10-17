@@ -76,12 +76,10 @@
                     <p id="cart-number"></p>
                 </button>
                 <div id="cart" class="dropdown-menu dropdown-menu-right">
-                    <div id="menu-head" class="text-center ml-2">
-                        <span id="total"></span>
-                        <br />
-                        <button id="rent-button" class="my-2" type="submit">Rent</button>
+                    <div id="menu-head" class="d-flex ml-2">
+                        <span class="col-9 p-0 pt-2" id="total"></span>
+                        <button id="rent-button" class="col-3 mb-2" type="submit">Rent</button>
                     </div>
-
                     <ul class="list-group">
                         <!-- This is where the cart menu will be added -->
                     </ul>
@@ -122,7 +120,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <p class="name">{{name}}</p>
-                    <p>Price: ${{moneyForm price}}</p>
+                    <p>Price: $<span id="price">{{moneyForm price}}</span></p>
                     <p>Instock: {{instock}}</p>
                 </div>
             </div>
@@ -143,9 +141,9 @@
                 <div class="">
                     <span class="name">{{name}}</span>
                     <br />
-                <div>Price: $<span class="price">{{moneyForm price}}</span> </div>
+                <div>Price:  <span class="price">{{moneyForm price}}</span> </div>
                 </div>
-                <div class="text-center">
+                <div class="text-right">
                     <button class="remove-button">Remove</button>
                 </div>
             </li>

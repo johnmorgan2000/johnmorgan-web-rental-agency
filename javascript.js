@@ -202,6 +202,15 @@ function formValidate() {
     }
 }
 
+function rentUnlock(cart) {
+    btn = document.getElementById("rent-button");
+    if (cart.length > 0) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+
 // gets the cart total
 function getTotal() {
     let prices = document.querySelectorAll(".price");
@@ -228,6 +237,7 @@ document.querySelector("#cancel").addEventListener("click", event => {
 
 //restarts the removeFromCart Function
 document.querySelector("#cart-button").addEventListener("click", () => {
+    rentUnlock(cart);
     getTotal();
     removeFromCart(cart, INVENTORY);
 });

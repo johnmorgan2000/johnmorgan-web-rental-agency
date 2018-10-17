@@ -28,7 +28,7 @@ body {
 
 /* setting the style for the navbar */
 nav.navbar {
-    background: linear-gradient(var(--secondary-color), #7d3ec5);
+    background: linear-gradient(var(--secondary-color), #7513e6);
     color: var(--primary-color);
     border-bottom: 3px solid #000000;
     position: fixed;
@@ -69,6 +69,10 @@ nav.navbar h1 {
 /* colors the shopping cart button */
 #cart-button {
     background: var(--primary-color);
+
+    /* on actual mobile device, this div shows up, this is to help hide it */
+    position: relative;
+    right: 16px;
 }
 
 /* darkens the color when the cart is hovered over */
@@ -130,3 +134,13 @@ main {
 /* .cart-item {
     padding: 0px;
 } */
+
+/* on actual mobile device, this div shows up, this is to help hide it */
+#dropdownMenuButton {
+    width: 20px;
+    height: 40px;
+}
+
+#rent-button {
+    display: none;
+}
