@@ -76,8 +76,8 @@
                     <p id="cart-number"></p>
                 </button>
                 <div id="cart" class="dropdown-menu dropdown-menu-right">
-                    <div class="text-center">
-                        <button id="rent-button" type="submit">Rent</button>
+                    <div id="menu-head" class="text-center ml-2">
+                        <button id="rent-button" class="mb-2" type="submit">Rent</button>
                     </div>
                     <ul class="list-group">
                         <!-- This is where the cart menu will be added -->
@@ -97,7 +97,7 @@
             <div id="categories">
             </div>
             <div id="market" class="container">
-                <div id="product" class="row justify-content-around">
+                <div id="product" class="row justify-content-around mt-5 pt-5">
 
                 </div>
             </div>
@@ -120,7 +120,7 @@
             </div>
             <p class="my-2">{{description}}</p>
             <div class="text-center">
-                <button id="add-button" type="submit">Add To Cart</button>
+                <button class="add-button" type="submit">Add To Cart</button>
             </div>
         </div>
     
@@ -131,13 +131,15 @@
 
     <script id="cart-content" type="text/x-handlebars-template">
             {{#each cart}}
-            <li id="cart-item" class="list-group-item border px-1 py-2 m-2">
+            <li id="cart-item" class="list-group-item px-1 py-2 m-2">
                 <div class="">
                     <span class="name">{{name}}</span>
                     <br />
                     <span>Price: ${{price}}</span> 
                 </div>
-                <button>Remove</button>
+                <div class="text-center">
+                    <button class="remove-button">Remove</button>
+                </div>
             </li>
             {{/each}}
     </script>
