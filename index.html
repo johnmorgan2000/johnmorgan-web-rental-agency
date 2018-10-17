@@ -68,25 +68,24 @@
     <!-- The navbar ontop of the page that contains the shopping cart button -->
 
     <nav class="navbar">
-        <div class="container">
-
-            <h1>Ping-Pong-o</h1>
+        <div id="navbar-contents" class="container">
+            <h1>Pong-o</h1>
             <div class="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <button id="cart-button" class="py-1 px-2 d-flex border-0 rounded">
                     <i id="shopping-cart" class="fas fa-shopping-cart fa-2x"></i>
                     <p id="cart-number"></p>
                 </button>
                 <div id="cart" class="dropdown-menu dropdown-menu-right">
-                    <ul class="list-group">
-                        <!-- This is where the cart menu will be added -->
-                    </ul>
                     <div class="text-center">
                         <button id="rent-button" type="submit">Rent</button>
                     </div>
+                    <ul class="list-group">
+                        <!-- This is where the cart menu will be added -->
+                    </ul>
                 </div>
             </div>
-
         </div>
+
     </nav>
 
 
@@ -97,8 +96,8 @@
 
             <div id="categories">
             </div>
-            <div id="market" class="">
-                <div id="product" class="row">
+            <div id="market" class="container">
+                <div id="product" class="row justify-content-around">
 
                 </div>
             </div>
@@ -110,7 +109,7 @@
         {{#each product}}
         <div class="product col-sm-12 col-lg-5 p-2 mx-2 my-2">
             <div class="row">
-                <div class="col-sm-3 col-lg-4">
+                <div class="col-sm-3 col-lg-4 pb-2">
                     <img class="rounded"src="{{imageURL}}" alt="Item picture" width="125px" height="125px">
                 </div>
                 <div class="col-sm-6 col-lg-4">
