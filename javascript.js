@@ -123,8 +123,12 @@ function cartAmount(cart) {
 // checks if the name input is valid
 function nameIsValid(input) {
     if (input.value.match(/[a-zA-Z ]/)) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
         return true;
     } else {
+        input.classList.remove("valid");
+        input.classList.add("invalid");
         return false;
     }
 }
@@ -132,8 +136,12 @@ function nameIsValid(input) {
 //checks if the email input is valid
 function emailIsValid(input) {
     if (input.value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
         return true;
     } else {
+        input.classList.remove("valid");
+        input.classList.add("invalid");
         return false;
     }
 }
@@ -144,8 +152,12 @@ function phoneIsValid(input) {
         input.value.match(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) ||
         input.value.match(/[0-9]{10}/)
     ) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
         return true;
     } else {
+        input.classList.remove("valid");
+        input.classList.add("invalid");
         return false;
     }
 }
@@ -153,16 +165,24 @@ function phoneIsValid(input) {
 // checks if the state input is valid
 function stateIsValid(input) {
     if (input.value.match(/[a-zA-z]{2}/)) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
         return true;
     } else {
+        input.classList.remove("valid");
+        input.classList.add("invalid");
         return false;
     }
 }
 // checks if the zip input is valid
 function zipIsValid(input) {
     if (input.value.match(/^\d{5}$/)) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
         return true;
     } else {
+        input.classList.remove("valid");
+        input.classList.add("invalid");
         return false;
     }
 }
@@ -170,8 +190,12 @@ function zipIsValid(input) {
 //checks if the street input is valid
 function streetIsValid(input) {
     if (input.value !== "") {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
         return true;
     } else {
+        input.classList.remove("valid");
+        input.classList.add("invalid");
         return false;
     }
 }

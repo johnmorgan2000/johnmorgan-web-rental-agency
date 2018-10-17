@@ -51,11 +51,30 @@ body {
     border: 1px solid grey;
 }
 
+/* gives the form inputs styling */
 form[name="purchase"] input {
-    border: 2px solid var(--secondary-color);
+    border: 2px solid red;
     border-radius: 5px;
     margin: 3px;
     padding: 3px;
+}
+
+/* valid inputs */
+form[name="purchase"] input.valid {
+    border: 2px solid green;
+}
+
+/* invalid inputs */
+form[name="purchase"] input.invalid {
+    border: 2px solid red;
+}
+
+#form-message {
+    font-size: 1.2rem;
+}
+
+#form-message span {
+    color: red;
 }
 
 /* setting the style for the navbar */
