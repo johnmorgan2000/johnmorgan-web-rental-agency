@@ -32,6 +32,7 @@ function selectItem() {
     }
 }
 
+//Checks if an item's stock is more than one
 function isInStock(item) {
     if (item.instock > 0) {
         return true;
@@ -200,6 +201,13 @@ function formValidate() {
         btn.disabled = true;
     }
 }
+
+// Puts The prices to the second decimal place
+Handlebars.registerHelper("moneyForm", function(obj) {
+    var price = Handlebars.escapeExpression(obj);
+    let newForm = Number(price).toFixed(2);
+    return `$${newForm}`;
+});
 
 //Cancel the form
 document.querySelector("#cancel").addEventListener("click", event => {
