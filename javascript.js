@@ -196,9 +196,9 @@ function formValidate() {
         zipIsValid(zip) &&
         streetIsValid(street)
     ) {
-        btn.disabled = false;
+        btn.style.display = "inline-block";
     } else {
-        btn.disabled = true;
+        btn.style.display = "none";
     }
 }
 
@@ -237,15 +237,22 @@ document.querySelector("#cancel").addEventListener("click", event => {
 
 //restarts the removeFromCart Function
 document.querySelector("#cart-button").addEventListener("click", () => {
+    formValidate();
+    verify();
     rentUnlock(cart);
     getTotal();
     removeFromCart(cart, INVENTORY);
 });
 
-document.querySelector("#unlock").addEventListener("click", event => {
-    formValidate();
-    event.preventDefault();
-});
+function verify() {
+    let inputs = document.forms["purchase"].querySelectorAll("input");
+    for (const input of inputs) {
+        input.addEventListener("input", () => {
+            console.log("wow");
+            formValidate();
+        });
+    }
+}
 
 renderProduct(INVENTORY);
 

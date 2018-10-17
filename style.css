@@ -19,7 +19,6 @@ body {
 .add-button,
 #rent-button,
 .remove-button,
-#unlock,
 #cancel,
 #submit {
     padding: 8px;
@@ -32,10 +31,13 @@ body {
 .add-button:hover,
 #rent-button:hover,
 .remove-button:hover,
-#unlock:hover,
 #cancel:hover,
 #submit:hover {
     background-color: var(--hover-secondary);
+}
+
+#submit {
+    display: none;
 }
 
 /* Altering how to form is displayed to the user */
@@ -50,7 +52,7 @@ body {
 }
 
 form[name="purchase"] input {
-    border: 1px solid var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
     margin: 3px;
     padding: 3px;
