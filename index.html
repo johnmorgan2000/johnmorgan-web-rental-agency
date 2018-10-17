@@ -110,7 +110,12 @@
         <div class="product col-sm-12 col-lg-5 p-2 mx-2 my-2">
             <div class="row">
                 <div class="col-sm-3 col-lg-4 pb-2">
+                    <!-- if the picture does not have an image then a placeholder is put in -->
+                    {{#if imageURL}}
                     <img class="rounded"src="{{imageURL}}" alt="Item picture" width="125px" height="125px">
+                    {{else}}
+                    <img class="rounded" src="images/placeholder.png" alt="Item picture" width="125px" height="125px">
+                    {{/if}}
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <p class="name">{{name}}</p>
