@@ -48,8 +48,6 @@ function addToCart(cart, inv, item) {
             if (isInStock(obj)) {
                 obj.instock -= 1;
                 cart.push(obj);
-            } else {
-                alert("Sorry, this is out of stock.");
             }
         }
 }
@@ -272,7 +270,6 @@ function verify() {
     let inputs = document.forms["purchase"].querySelectorAll("input");
     for (const input of inputs) {
         input.addEventListener("input", () => {
-            console.log("wow");
             formValidate();
         });
     }
