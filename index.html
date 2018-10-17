@@ -81,7 +81,7 @@
                         <!-- This is where the cart menu will be added -->
                     </ul>
                     <div class="text-center">
-                        <button type="submit">Rent</button>
+                        <button id="rent-button" type="submit">Rent</button>
                     </div>
                 </div>
             </div>
@@ -132,12 +132,13 @@
 
     <script id="cart-content" type="text/x-handlebars-template">
             {{#each cart}}
-            <li class="list-group-item cart-item">
-                <div class="d-flex">
+            <li id="cart-item" class="list-group-item border px-1 py-2 m-2">
+                <div class="">
                     <span class="name">{{name}}</span>
-                    {{price}} 
-                    <button>Remove</button>
+                    <br />
+                    <span>Price: ${{price}}</span> 
                 </div>
+                <button>Remove</button>
             </li>
             {{/each}}
     </script>
