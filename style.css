@@ -1,21 +1,21 @@
+/* These are my main colors */
 :root {
     --primary-color: #d1d1d1;
     --secondary-color: #a566ee;
     --hover-secondary: #bbb8b8;
 }
 
+/* Makes sure that eveything is in this font */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Setting a minimal width to make sure everything fits properly on smaller screens */
 body {
     min-width: 300px;
 }
 
-.dropdown-toggle::after {
-    display: none;
-}
-
+/* Altering how to form is displayed to the user */
 #payment-form {
     display: none;
     position: fixed;
@@ -26,16 +26,31 @@ body {
     border: 1px solid grey;
 }
 
+/* setting the style for the navbar */
 nav.navbar {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+#navbar-contents,
+#content {
+    max-width: 960px;
+}
+
+/* the normal setting for the navbar header */
 nav.navbar h1 {
     font-size: 2rem;
     font-weight: bold;
 }
 
+/* changes the navbar header to a more reasonable size when the screen is below the min width */
+@media screen and (max-width: 350px) {
+    nav.navbar h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* puts the number inside the shopping cart logo and styles it */
 #cart-number {
     position: absolute;
     z-index: 1;
@@ -46,22 +61,27 @@ nav.navbar h1 {
     margin-top: 01px;
 }
 
+/* colors the shopping cart button */
 #cart-button {
     background: var(--primary-color);
 }
 
+/* darkens the color when the cart is hovered over */
 #cart-button:hover {
     background-color: var(--hover-secondary);
 }
 
+/* changes the shopping cart color */
 #shopping-cart {
     color: var(--secondary-color);
 }
 
+/* background color for page */
 main {
     background-color: var(--primary-color);
 }
 
+/* styles each item when displayed */
 .product {
     background-color: var(--secondary-color);
     color: white;
@@ -70,6 +90,7 @@ main {
     border-radius: 6px;
 }
 
+/* main button style */
 #add-button,
 #rent-button {
     padding: 5px;
@@ -79,12 +100,12 @@ main {
     border: none;
     border-radius: 5px;
 }
-
 #add-button:hover,
 #rent-button:hover {
     background-color: var(--hover-secondary);
 }
 
+/* customize cart menu */
 .dropdown-menu {
     width: 250px;
 }
