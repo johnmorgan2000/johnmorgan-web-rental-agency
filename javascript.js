@@ -15,6 +15,7 @@ function refreshProduct(inv) {
     product.innerHTML = "";
     renderProduct(INVENTORY);
     selectItem();
+    hideOutOfStock();
 }
 
 // Adds eventlisters to the buttons to add it to cart
@@ -29,6 +30,20 @@ function selectItem() {
             refreshProduct(INVENTORY);
             cartAmount(cart);
         });
+    }
+}
+
+// when a products stock is at 0 the item is hidden
+function hideOutOfStock() {
+    var products = document.querySelectorAll(".product");
+    for (const product of products) {
+        let stock = product.querySelector(".stock");
+        console.log(stock.innerText);
+        if (stock.innerText < 1) {
+            product.style.display = "none";
+        } else {
+            product.style.display = "block";
+        }
     }
 }
 
@@ -186,7 +201,7 @@ function zipIsValid(input) {
 }
 
 //checks if the street input is valid
-function streetIsValid(input) {
+function inputNotEmpty(input) {
     if (input.value !== "") {
         input.classList.remove("invalid");
         input.classList.add("valid");
@@ -203,20 +218,33 @@ function formValidate() {
     let form = document.forms["purchase"];
     let btn = document.querySelector("#submit");
 
-    let name = form.querySelector("#customer-name");
+    let firstName = form.querySelector("#customer-firstname");
+    let lastName = form.querySelector("#customer-lastname");
     let email = form.querySelector("#customer-email");
     let phone = form.querySelector("#customer-phone");
     let state = form.querySelector("#customer-state");
+    let city = form.querySelector("#customer-city");
     let zip = form.querySelector("#customer-zip");
     let street = form.querySelector("#customer-street");
 
+    nameIsValid(firstName);
+    nameIsValid(lastName);
+    emailIsValid(email);
+    phoneIsValid(phone);
+    stateIsValid(state);
+    zipIsValid(zip);
+    inputNotEmpty(street);
+    inputNotEmpty(city);
+
     if (
-        nameIsValid(name) &&
+        nameIsValid(firstName) &&
+        nameIsValid(lastName) &&
         emailIsValid(email) &&
         phoneIsValid(phone) &&
         stateIsValid(state) &&
         zipIsValid(zip) &&
-        streetIsValid(street)
+        inputNotEmpty(street) &&
+        inputNotEmpty(city)
     ) {
         btn.style.display = "inline-block";
     } else {
@@ -244,6 +272,15 @@ function getTotal() {
     document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
 }
 
+function clearInputs() {
+    let form = document.forms["purchase"];
+    let inputs = form.querySelectorAll("input");
+    for (input of inputs) {
+        input.value = "";
+        input.classList.remove("valid");
+    }
+}
+
 // Puts The prices to the second decimal place
 Handlebars.registerHelper("moneyForm", function(obj) {
     var price = Handlebars.escapeExpression(obj);
@@ -254,6 +291,7 @@ Handlebars.registerHelper("moneyForm", function(obj) {
 //Cancel the form
 document.querySelector("#cancel").addEventListener("click", event => {
     document.querySelector("#payment-form").style.display = "none";
+    clearInputs();
     event.preventDefault();
 });
 
@@ -276,8 +314,8 @@ function verify() {
 }
 
 renderProduct(INVENTORY);
-
 selectItem();
+hideOutOfStock();
 rent();
 cartAmount(cart);
 formValidate();
