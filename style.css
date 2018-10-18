@@ -45,6 +45,7 @@ body {
     display: none;
     position: fixed;
     height: 100%;
+    overflow: scroll;
     z-index: 2;
     background-color: white;
     padding: 5px;
@@ -113,7 +114,7 @@ nav.navbar h1 {
     color: var(--primary-color);
     font-weight: white;
     font-size: 0.9rem;
-    margin-left: 17px;
+    margin-left: 16px;
     margin-top: 01px;
 }
 
@@ -152,17 +153,43 @@ main {
 
 /* customize cart menu and adds a scroll bar */
 .dropdown-menu {
-    width: 250px;
-    height: 250px;
+    min-height: 250px;
+    max-height: 350px;
     overflow: scroll;
 }
+
+@media screen and (max-width: 574px) {
+    .dropdown-menu {
+        width: 250px;
+    }
+    #rent-button {
+        font-size: 1rem;
+        padding: 3px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 575px) {
+    .dropdown-menu {
+        width: 500px;
+    }
+    #rent-button {
+        font-size: 1rem;
+        padding: 3px;
+        margin-right: 20px;
+    }
+}
+
 #cart-item {
-    border: none;
-    border-bottom: 2px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
 }
 
 #menu-head {
-    border-bottom: 3px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.2rem;
+    border-bottom: 3px solid black;
 }
 
 /* .cart-item {
@@ -171,10 +198,16 @@ main {
 
 /* on actual mobile device, this div shows up, this is to help hide it */
 #dropdownMenuButton {
-    width: 20px;
+    width: 10px;
     height: 40px;
 }
 
 #rent-button {
     display: none;
+    margin-top: 5px;
+}
+
+.emphasis {
+    color: var(--secondary-color);
+    font-weight: bold;
 }

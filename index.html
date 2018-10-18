@@ -91,8 +91,9 @@
                     <i id="shopping-cart" class="fas fa-shopping-cart fa-2x"></i>
                     <p id="cart-number"></p>
                 </button>
-                <div id="cart" class="dropdown-menu dropdown-menu-right">
-                    <div id="menu-head" class="d-flex ml-2">
+                <div id="cart" class="dropdown-menu dropdown-menu-right pt-0">
+                    <div id="menu-head" class="d-flex pl-2 justify-content-between pt-0">
+
                         <span class="col-8 p-0 pt-2" id="total"></span>
                         <button id="rent-button" class="col-3 mb-2 mx-3" type="submit">Rent</button>
                     </div>
@@ -154,10 +155,11 @@
     <script id="cart-content" type="text/x-handlebars-template">
             {{#each cart}}
             <li id="cart-item" class="list-group-item px-1 py-2 m-2">
-                <div class="">
-                    <span class="name">{{name}}</span>
-                    <br />
-                <div>Price:  <span class="price">{{moneyForm price}}</span> </div>
+                <div>
+                    <p class="m-0"><span class="emphasis">Your Item: <br /></span><span class="name">{{name}}</span></p>
+                <div>
+                   <p class="m-0"><span class="emphasis">Price: <br /></span>$<span class="cart-price">{{moneyForm price}}</span></p>
+                </div>
                 </div>
                 <div class="text-right">
                     <button class="remove-button">Remove</button>
