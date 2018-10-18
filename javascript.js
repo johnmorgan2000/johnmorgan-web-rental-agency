@@ -7,12 +7,12 @@ function renderProduct(inv) {
     var html = template({
         product: inv
     });
-    document.getElementById("product").insertAdjacentHTML("beforeend", html);
+    var product = document.querySelector("#product");
+    product.innerHTML = "";
+    product.insertAdjacentHTML("beforeend", html);
 }
 
 function refreshProduct(inv) {
-    var product = document.querySelector("#product");
-    product.innerHTML = "";
     renderProduct(INVENTORY);
     selectItem();
     hideOutOfStock();
@@ -48,11 +48,7 @@ function hideOutOfStock() {
 
 //Checks if an item's stock is more than one
 function isInStock(item) {
-    if (item.instock > 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return item.instock > 0;
 }
 
 // Takes the product from inventory and adds it to cart
