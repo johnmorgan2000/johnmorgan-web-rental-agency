@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rental</title>
+    <title>Ping-o Pong-o</title>
+    <link rel="shortcut icon" href="images/favicon-1.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
 
@@ -26,23 +27,38 @@
                 </p>
             </div>
             <form name="purchase">
-                <label class="d-block text-center">Name <br />
-                    <input type="text" id="customer-name">
+                <!-- firstname input -->
+                <label class="d-block text-center">Firstname<br />
+                    <input type="text" id="customer-firstname">
                 </label>
-
+                <!-- lastname input -->
+                <label class="d-block text-center">Lastname<br />
+                    <input type="text" id="customer-lastname">
+                </label>
+                <!-- email address -->
                 <label class="d-block text-center">Email<br />
                     <input type="email" id="customer-email">
-
                 </label>
-
+                <!-- phone number -->
                 <label class="d-block text-center">Phone Number<br />
                     <input type="text" id="customer-phone">
                 </label>
+                <!-- street address -->
+                <label class="d-block text-center">Street Address<br />
+                    <input type="text" id="customer-street">
+                </label>
+                <!-- city -->
+                <label class="d-block text-center">City<br />
+                    <input type="text" id="customer-city">
+                </label>
 
-                <label class="d-block text-center">Address</label>
-                <label class="d-block text-center"><input type="text" id="customer-state" placeholder="State Abbr"></label>
-                <label class="d-block text-center"><input type="text" id="customer-zip" placeholder="Zip Code"></label>
-                <label class="d-block text-center"><input type="text" id="customer-street" placeholder="Street"></label>
+                <label class="d-block text-center">State<br />
+                    <input type="text" id="customer-state">
+                </label>
+
+                <label class="d-block text-center">Zip Code<br />
+                    <input type="text" id="customer-zip">
+                </label>
 
 
                 <div class="text-center">
@@ -120,8 +136,8 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <p class="name">{{name}}</p>
-                    <p>Price: $<span id="price">{{moneyForm price}}</span></p>
-                    <p>Instock: {{instock}}</p>
+                    <p>Price: $<span class="price">{{moneyForm price}}</span></p>
+                    <p>Instock: <span class="instock">{{instock}}</span></p>
                 </div>
             </div>
             <p class="my-2">{{description}}</p>
