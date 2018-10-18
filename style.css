@@ -1,7 +1,7 @@
 /* These are my main colors */
 :root {
-    --primary-color: #d1d1d1;
-    --secondary-color: #a566ee;
+    --primary-color: #f5e6e6;
+    --secondary-color: #459b97;
     --hover-secondary: #bbb8b8;
 }
 
@@ -54,20 +54,32 @@ body {
 
 /* gives the form inputs styling */
 form[name="purchase"] input {
-    border: 2px solid red;
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
     margin: 3px;
     padding: 3px;
 }
 
 /* valid inputs */
-form[name="purchase"] input.valid {
-    border: 2px solid green;
+form[name="purchase"] input.valid ~ .check {
+    display: inline-block;
+    color: rgb(0, 190, 0);
+    /* border: 3px solid rgb(118, 255, 76); */
 }
 
 /* invalid inputs */
-form[name="purchase"] input.invalid {
-    border: 2px solid red;
+form[name="purchase"] input.invalid ~ .x-mark {
+    display: inline-block;
+    color: red;
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+
+.check {
+    display: none;
+}
+
+.x-mark {
+    display: none;
 }
 
 #form-message {
@@ -80,7 +92,7 @@ form[name="purchase"] input.invalid {
 
 /* setting the style for the navbar */
 nav.navbar {
-    background: linear-gradient(var(--secondary-color), #7513e6);
+    background: linear-gradient(var(--secondary-color), #13c6e6);
     color: var(--primary-color);
     border-bottom: 3px solid #000000;
     position: fixed;
