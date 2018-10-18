@@ -37,8 +37,7 @@ function selectItem() {
 function hideOutOfStock() {
     var products = document.querySelectorAll(".product");
     for (const product of products) {
-        let stock = product.querySelector(".stock");
-        console.log(stock.innerText);
+        let stock = product.querySelector(".instock");
         if (stock.innerText < 1) {
             product.style.display = "none";
         } else {
@@ -263,7 +262,7 @@ function rentUnlock(cart) {
 
 // gets the cart total
 function getTotal() {
-    let prices = document.querySelectorAll(".price");
+    let prices = document.querySelectorAll(".cart-price");
     total = 0;
     for (price of prices) {
         console.log(price.innerText);
