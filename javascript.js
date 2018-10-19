@@ -359,7 +359,7 @@ function addedMessageAnimation() {
             counter++;
             msg.style.display = "block";
         }
-    }, 30);
+    }, 60);
 }
 
 renderProduct(INVENTORY);

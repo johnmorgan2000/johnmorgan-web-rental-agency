@@ -286,6 +286,8 @@ main {
 
 #added-message {
     position: fixed;
+    top: 50%;
+    margin-top: -50px;
     display: none;
     z-index: 2;
     color: var(--secondary-color);
@@ -294,6 +296,4 @@ main {
     border-radius: 5px;
     padding: 5px;
     padding-top: 10px;
-    margin-top: 40%;
-    margin-left: 35%;
 }
