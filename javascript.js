@@ -290,6 +290,16 @@ document.querySelector("#cancel").addEventListener("click", event => {
     event.preventDefault();
 });
 
+//Display thank you screen
+document.querySelector("#submit").addEventListener("click", event => {
+    event.preventDefault();
+    document.querySelector("#thank-you").style.display = "block";
+});
+
+document.querySelector("#refresh-button").addEventListener("click", () => {
+    location.reload();
+});
+
 //restarts the removeFromCart Function
 document.querySelector("#cart-button").addEventListener("click", () => {
     formValidate();
@@ -308,9 +318,59 @@ function verify() {
     }
 }
 
+function thankYouAnimation() {
+    var el = document.getElementById("ball");
+    var y = 65;
+    var x = -10;
+    setInterval(() => {
+        if (x == 150) {
+            y = 65;
+            x = -10;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else if (x >= 120) {
+            y--;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else if (x >= 100) {
+            y++;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else if (x >= 80) {
+            y--;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else if (x >= 60) {
+            y++;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else if (x >= 40) {
+            y--;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else if (x >= 15) {
+            y++;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        } else {
+            y--;
+            x++;
+            el.style.top = y + "px";
+            el.style.left = x + "px";
+        }
+    }, 20);
+}
+
 renderProduct(INVENTORY);
 selectItem();
 hideOutOfStock();
 rent();
 cartAmount(cart);
 formValidate();
+thankYouAnimation();
