@@ -65,11 +65,21 @@ body {
 }
 
 /* gives the form inputs styling */
-form[name="purchase"] input {
+form[name="purchase"] input,
+form[name="purchase"] select {
     border: 2px solid var(--secondary-color);
     border-radius: 5px;
     margin: 3px;
     padding: 3px;
+}
+
+form[name="purchase"] select {
+    width: 204px;
+    height: 34px;
+}
+
+.fa-check {
+    color: rgb(0, 190, 0);
 }
 
 /* valid inputs */
@@ -272,4 +282,18 @@ main {
     width: 10px;
     height: 10px;
     border-radius: 100%;
+}
+
+#added-message {
+    position: fixed;
+    display: none;
+    z-index: 2;
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 10px;
+    font-size: 2rem;
+    margin-top: 20%;
+    margin-left: 40%;
 }

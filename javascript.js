@@ -165,18 +165,6 @@ function phoneIsValid(input) {
     }
 }
 
-// checks if the state input is valid
-function stateIsValid(input) {
-    if (input.value.match(/[a-zA-z]{2}/)) {
-        input.classList.remove("invalid");
-        input.classList.add("valid");
-        return true;
-    } else {
-        input.classList.remove("valid");
-        input.classList.add("invalid");
-        return false;
-    }
-}
 // checks if the zip input is valid
 function zipIsValid(input) {
     if (input.value.match(/^\d{5}$/)) {
@@ -212,7 +200,6 @@ function formValidate() {
     let lastName = form.querySelector("#customer-lastname");
     let email = form.querySelector("#customer-email");
     let phone = form.querySelector("#customer-phone");
-    let state = form.querySelector("#customer-state");
     let city = form.querySelector("#customer-city");
     let zip = form.querySelector("#customer-zip");
     let street = form.querySelector("#customer-street");
@@ -221,7 +208,6 @@ function formValidate() {
     nameIsValid(lastName);
     emailIsValid(email);
     phoneIsValid(phone);
-    stateIsValid(state);
     zipIsValid(zip);
     inputNotEmpty(street);
     inputNotEmpty(city);
@@ -231,7 +217,6 @@ function formValidate() {
         nameIsValid(lastName) &&
         emailIsValid(email) &&
         phoneIsValid(phone) &&
-        stateIsValid(state) &&
         zipIsValid(zip) &&
         inputNotEmpty(street) &&
         inputNotEmpty(city)
@@ -360,6 +345,16 @@ function thankYouAnimation() {
             el.style.left = x + "px";
         }
     }, 20);
+}
+
+function addedAnimation() {
+    let msg = document.querySelector("#added-message");
+    setInterval(() => {
+        let timer = 0;
+        if ((timer = 10)) {
+            clearInterval();
+        }
+    });
 }
 
 renderProduct(INVENTORY);
