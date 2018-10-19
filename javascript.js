@@ -69,19 +69,14 @@ function removeFromCart(cart, inv) {
         let btn = item.querySelector("button");
 
         btn.addEventListener("click", () => {
-            let name = item.querySelector(".name").innerText;
-
-            var elementPos = cart
-                .map(function(x) {
-                    return x.name;
-                })
-                .indexOf(name);
-
-            var obj = cart[elementPos];
+            var index = cart.findIndex(x => {
+                return x.name;
+            });
+            var obj = cart[index];
 
             for (i of inv) {
                 if (obj.name === i.name) {
-                    cart.splice(elementPos, 1);
+                    cart.splice(index, 1);
                     i.instock++;
                     break;
                 }
