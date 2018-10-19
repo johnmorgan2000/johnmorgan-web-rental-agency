@@ -24,6 +24,7 @@ function selectItem() {
     for (const i of products) {
         let btn = i.querySelector("button");
         btn.addEventListener("click", () => {
+            addedMessageAnimation();
             addToCart(cart, INVENTORY, i);
             refreshCart(cart);
             viewCart(cart);
@@ -347,14 +348,18 @@ function thankYouAnimation() {
     }, 20);
 }
 
-function addedAnimation() {
+function addedMessageAnimation() {
     let msg = document.querySelector("#added-message");
-    setInterval(() => {
-        let timer = 0;
-        if ((timer = 10)) {
-            clearInterval();
+    let counter = 0;
+    let timer = setInterval(() => {
+        if (counter == 10) {
+            msg.style.display = "none";
+            clearInterval(timer);
+        } else {
+            counter++;
+            msg.style.display = "block";
         }
-    });
+    }, 30);
 }
 
 renderProduct(INVENTORY);

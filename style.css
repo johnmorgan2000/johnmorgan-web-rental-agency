@@ -288,12 +288,12 @@ main {
     position: fixed;
     display: none;
     z-index: 2;
+    color: var(--secondary-color);
     background-color: var(--primary-color);
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
     padding: 5px;
     padding-top: 10px;
-    font-size: 2rem;
-    margin-top: 20%;
-    margin-left: 40%;
+    margin-top: 40%;
+    margin-left: 35%;
 }
