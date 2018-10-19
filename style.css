@@ -20,7 +20,8 @@ body {
 #rent-button,
 .remove-button,
 #cancel,
-#submit {
+#submit,
+#refresh-button {
     padding: 8px;
     color: var(--secondary-color);
     background-color: var(--primary-color);
@@ -32,8 +33,19 @@ body {
 #rent-button:hover,
 .remove-button:hover,
 #cancel:hover,
-#submit:hover {
+#submit:hover,
+#refresh-button:hover {
     background-color: var(--hover-secondary);
+}
+
+#thank-you {
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: white;
 }
 
 #submit {
@@ -222,4 +234,41 @@ main {
 .emphasis {
     color: var(--secondary-color);
     font-weight: bold;
+}
+
+/* thank you screen styling */
+
+#thank-you {
+    display: none;
+    padding-top: 60px;
+}
+
+#thank-you p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+#animation {
+    position: relative;
+    width: 150px;
+    height: 75px;
+    border-bottom: 2px solid rgb(9, 42, 230);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#net {
+    margin-left: 50px;
+    margin-top: 60px;
+    height: 15px;
+    width: 2px;
+    border: 1px solid black;
+}
+
+#ball {
+    background-color: orange;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
 }
