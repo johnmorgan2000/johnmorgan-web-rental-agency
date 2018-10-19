@@ -163,6 +163,7 @@ nav.navbar h1 {
 
 /* background color for page */
 main {
+    width: 100%;
     background-color: var(--primary-color);
 }
 
