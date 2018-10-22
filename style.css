@@ -57,7 +57,7 @@ body {
     display: none;
     position: fixed;
     top: 60px;
-    height: 90%;
+    height: 95%;
     overflow: scroll;
     background-color: white;
     padding: 5px;
@@ -85,17 +85,31 @@ form[name="purchase"] select {
 }
 
 /* valid inputs */
-form[name="purchase"] input.valid ~ .check {
+form[name="purchase"] input.valid ~ .check,
+form[name="purchase"] span.valid ~ .check {
     display: inline-block;
     color: rgb(0, 190, 0);
     /* border: 3px solid rgb(118, 255, 76); */
 }
 
 /* invalid inputs */
-form[name="purchase"] input.invalid ~ .x-mark {
+form[name="purchase"] input.invalid ~ .x-mark,
+form[name="purchase"] span.invalid ~ .x-mark {
     display: inline-block;
     color: red;
     /* border: 2px solid rgb(255, 0, 0); */
+}
+
+#area-code,
+#prefix {
+    margin: 0px;
+    width: 50px;
+    height: 34px;
+}
+#line-number {
+    margin: 0px;
+    width: 80px;
+    height: 34px;
 }
 
 .check {

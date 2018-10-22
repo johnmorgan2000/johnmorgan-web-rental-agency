@@ -168,17 +168,20 @@ function emailIsValid(input) {
 }
 
 //checks if the phone input is valid
-function phoneIsValid(input) {
+function phoneIsValid(area, prefix, line) {
+    let phone = document.querySelector("#phone-number");
+    let number = area.value + prefix.value + line.value;
+    console.log(number);
     if (
-        input.value.match(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) ||
-        input.value.match(/[0-9]{10}/)
+        number.match(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) ||
+        number.match(/[0-9]{10}/)
     ) {
-        input.classList.remove("invalid");
-        input.classList.add("valid");
+        phone.classList.remove("invalid");
+        phone.classList.add("valid");
         return true;
     } else {
-        input.classList.remove("valid");
-        input.classList.add("invalid");
+        phone.classList.remove("valid");
+        phone.classList.add("invalid");
         return false;
     }
 }
@@ -217,7 +220,9 @@ function formValidate() {
     let firstName = form.querySelector("#customer-firstname");
     let lastName = form.querySelector("#customer-lastname");
     let email = form.querySelector("#customer-email");
-    let phone = form.querySelector("#customer-phone");
+    let phoneArea = form.querySelector("#area-code");
+    let phonePrefix = form.querySelector("#prefix");
+    let phoneLine = form.querySelector("#line-number");
     let city = form.querySelector("#customer-city");
     let zip = form.querySelector("#customer-zip");
     let street = form.querySelector("#customer-street");
@@ -225,7 +230,7 @@ function formValidate() {
     nameIsValid(firstName);
     nameIsValid(lastName);
     emailIsValid(email);
-    phoneIsValid(phone);
+    phoneIsValid(phoneArea, phonePrefix, phoneLine);
     zipIsValid(zip);
     inputNotEmpty(street);
     inputNotEmpty(city);
@@ -376,7 +381,7 @@ function addedMessageAnimation() {
             counter++;
             msg.style.display = "block";
         }
-    }, 60);
+    }, 20);
 }
 
 renderProduct(INVENTORY);

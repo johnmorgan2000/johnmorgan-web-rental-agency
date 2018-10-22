@@ -31,38 +31,45 @@
                 <div>
                     <!-- firstname input -->
                     <div class="d-block text-center">Firstname<br />
-                        <input class="invalid" type="text" id="customer-firstname" placeholder="John">
+                        <input class="inputs" class="invalid" type="text" id="customer-firstname" placeholder="John">
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
                     </div>
                     <!-- lastname input -->
                     <div class="d-block text-center">Lastname<br />
-                        <input type="text" id="customer-lastname" placeholder="Doe">
+                        <input class="inputs" type="text" id="customer-lastname" placeholder="Doe">
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
                     </div>
                     <!-- email address -->
                     <div class="d-block text-center">Email<br />
-                        <input type="email" id="customer-email" placeholder="john@doe.com">
+                        <input class="inputs" type="email" id="customer-email" placeholder="john@doe.com">
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
 
                     </div>
                     <!-- phone number -->
                     <div class="d-block text-center">Phone Number<br />
-                        <input type="text" id="customer-phone" placeholder="123-456-7890">
+                        <span class="invalid" id="phone-number">
+                            <input id="area-code" type="text" placeholder="(xxx)" minlength="3" maxlength="3">
+                            <span>-</span>
+                            <input id="prefix" type="text" placeholder="xxx" maxlength="3">
+                            <span>-</span>
+                            <input id="line-number" type="text" placeholder="xxxx" maxlength="4">
+                        </span>
+
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
                     </div>
                     <!-- street address -->
                     <div class="d-block text-center">Street Address<br />
-                        <input type="text" id="customer-street" placeholder="123 Doe Rd.">
+                        <input class="inputs" type="text" id="customer-street" placeholder="123 Doe Rd.">
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
                     </div>
                     <!-- city -->
                     <div class="d-block text-center">City<br />
-                        <input type="text" id="customer-city" placeholder="Johnville">
+                        <input class="inputs" type="text" id="customer-city" placeholder="Johnville">
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
                     </div>
@@ -126,7 +133,7 @@
                     </div>
 
                     <div class="d-block text-center">Zip Code<br />
-                        <input type="text" id="customer-zip" placeholder="12345">
+                        <input class="inputs" type="text" id="customer-zip" placeholder="12345" maxlength="5">
                         <span class="check"><i class="fas fa-check"></i></span>
                         <span class="x-mark"><i class="fas fa-times"></i></span>
                     </div>
@@ -142,13 +149,15 @@
                         <br />
 
                     </div>
-
                     <div class="text-center">
                         <button id="cancel" class="m-1">Cancel</button>
                         <button type="submit" class="m-1" id="submit">Submit</button>
                     </div>
 
+
+
             </form>
+
             </div>
         </div>
 
