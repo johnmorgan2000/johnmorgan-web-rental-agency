@@ -53,5 +53,23 @@ const INVENTORY = [
         imageURL: "images/johnspaddle.jpeg",
         instock: 1,
         price: 100000
+    },
+    {
+        name: "Ping Pong Set",
+        category: ["Popular"],
+        description:
+            "A complete two person ping pong set that includes the following: one table, two paddles, three balls",
+        imageURL: "images/pong-set.jpeg",
+        instock: 1,
+        price: 100
+    },
+    {
+        name: "Large Ping Pong Set",
+        category: ["Popular"],
+        description:
+            "A large ping pong set that includes the following: one net, two paddles, three balls",
+        imageURL: "images/tennis.jpeg",
+        instock: 1,
+        price: 120
     }
 ];
