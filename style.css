@@ -65,11 +65,10 @@ body {
 /* Altering how to form is displayed to the user */
 
 #payment-form {
-    width: 350px;
     display: none;
     position: fixed;
     top: 60px;
-    height: 95%;
+    height: 90%;
     overflow: scroll;
     background-color: white;
     padding: 5px;

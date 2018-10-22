@@ -83,7 +83,7 @@ const INVENTORY = [
         name: "The ultimate ball",
         category: ["Popular"],
         description: "Only the strongest ping pong player can use this ball",
-        imageURL: "images/ultimate-ball.jpeg",
+        imageURL: "images/ultimate-ball.jpg",
         instock: 1,
         price: 86.99
     }

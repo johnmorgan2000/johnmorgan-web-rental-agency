@@ -171,7 +171,7 @@ function emailIsValid(input) {
 function phoneIsValid(area, prefix, line) {
     let phone = document.querySelector("#phone-number");
     let number = area.value + prefix.value + line.value;
-    console.log(number);
+
     if (
         number.match(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) ||
         number.match(/[0-9]{10}/)
@@ -264,12 +264,12 @@ function getTotal() {
     let prices = document.querySelectorAll(".cart-price");
     total = 0;
     for (price of prices) {
-        console.log(price.innerText);
         total += parseFloat(price.innerText);
     }
     document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
 }
 
+// clears the inputs when the user cancels the form
 function clearInputs() {
     let form = document.forms["purchase"];
     let inputs = form.querySelectorAll("input");
