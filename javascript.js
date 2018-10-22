@@ -110,9 +110,26 @@ function refreshCart(cart) {
 function rent() {
     const btn = document.querySelector("#cart button");
     btn.addEventListener("click", () => {
-        document.querySelector("#payment-form").style.display = "block";
+        switchToForm();
     });
 }
+
+function switchToForm() {
+    let page = document.querySelector("main");
+    let cart = document.querySelector("#dropdownMenuButton");
+    let form = document.querySelector("#payment-form");
+
+    if (page.style.display != "none") {
+        page.style.display = "none";
+        cart.style.display = "none";
+        form.style.display = "block";
+    } else {
+        page.style.display = "block";
+        cart.style.display = "block";
+        form.style.display = "none";
+    }
+}
+
 // Counts how many items are in the cart
 function cartAmount(cart) {
     let sum = 0;
@@ -266,7 +283,7 @@ Handlebars.registerHelper("moneyForm", function(obj) {
 
 //Cancel the form
 document.querySelector("#cancel").addEventListener("click", event => {
-    document.querySelector("#payment-form").style.display = "none";
+    switchToForm();
     clearInputs();
     event.preventDefault();
 });

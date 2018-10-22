@@ -56,9 +56,9 @@ body {
 #payment-form {
     display: none;
     position: fixed;
-    height: 100%;
+    top: 60px;
+    height: 90%;
     overflow: scroll;
-    z-index: 2;
     background-color: white;
     padding: 5px;
     border: 1px solid grey;
