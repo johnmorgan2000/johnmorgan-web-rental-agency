@@ -60,7 +60,7 @@ const INVENTORY = [
         description:
             "A complete two person ping pong set that includes the following: one table, two paddles, three balls",
         imageURL: "images/pong-set.jpeg",
-        instock: 1,
+        instock: 4,
         price: 100
     },
     {
@@ -69,7 +69,22 @@ const INVENTORY = [
         description:
             "A large ping pong set that includes the following: one net, two paddles, three balls",
         imageURL: "images/tennis.jpeg",
-        instock: 1,
+        instock: 3,
         price: 120
+    },
+    {
+        name: "Invisible ball",
+        category: ["Popular"],
+        description: "An invisible ball that is very hard to keep track of",
+        instock: 1,
+        price: 30
+    },
+    {
+        name: "The ultimate ball",
+        category: ["Popular"],
+        description: "Only the strongest ping pong player can use this ball",
+        imageURL: "images/ultimate-ball.jpeg",
+        instock: 1,
+        price: 86.99
     }
 ];
