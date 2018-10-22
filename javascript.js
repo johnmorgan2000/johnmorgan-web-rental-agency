@@ -239,7 +239,7 @@ function formValidate() {
         nameIsValid(firstName) &&
         nameIsValid(lastName) &&
         emailIsValid(email) &&
-        phoneIsValid(phone) &&
+        phoneIsValid(phoneArea, phonePrefix, phoneLine) &&
         zipIsValid(zip) &&
         inputNotEmpty(street) &&
         inputNotEmpty(city)
@@ -312,6 +312,13 @@ document.querySelector("#cart-button").addEventListener("click", () => {
     removeFromCart(cart, INVENTORY);
 });
 
+document.addEventListener("keypress", event => {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
+});
+
+// validates a form on input
 function verify() {
     let inputs = document.forms["purchase"].querySelectorAll("input");
     for (const input of inputs) {
@@ -321,6 +328,7 @@ function verify() {
     }
 }
 
+// Animates the thank you screen
 function thankYouAnimation() {
     var el = document.getElementById("ball");
     var y = 65;
