@@ -63,7 +63,9 @@ body {
 }
 
 /* Altering how to form is displayed to the user */
+
 #payment-form {
+    width: 350px;
     display: none;
     position: fixed;
     top: 60px;
@@ -286,11 +288,19 @@ main {
 #thank-you {
     display: none;
     padding-top: 60px;
+    background-color: #0000004b;
 }
 
 #thank-you p {
     font-size: 1.5rem;
     color: var(--secondary-color);
+}
+
+#thank-you-content {
+    padding: 10px;
+    background-color: white;
+    width: 300px;
+    margin-top: 50px;
 }
 
 #animation {

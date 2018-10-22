@@ -19,156 +19,161 @@
 
 
     <!-- The form that must be submitted in order to rent -->
-    <div id="form-container" class="row justify-content-around ">
-        <div id="payment-form" class="col-sm-12 col-lg-12">
-            <div class="text-center">
-                <p id="form-message">
-                    Fill out the areas that contains <span class="text-weight-bold"><i class="fas fa-times"></i></span> with
-                    the appropriate information
-                </p>
-            </div>
-            <form name="purchase">
-                <div>
-                    <!-- firstname input -->
-                    <div class="d-block text-center">Firstname<br />
-                        <input class="inputs" class="invalid" type="text" id="customer-firstname" placeholder="John">
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
-                    </div>
-                    <!-- lastname input -->
-                    <div class="d-block text-center">Lastname<br />
-                        <input class="inputs" type="text" id="customer-lastname" placeholder="Doe">
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
-                    </div>
-                    <!-- email address -->
-                    <div class="d-block text-center">Email<br />
-                        <input class="inputs" type="email" id="customer-email" placeholder="john@doe.com">
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
+    <div>
+        <div id="form-container" class="row justify-content-around ">
+            <div id="payment-form" class="col-sm-12 col-lg-12 mx-auto">
+                <div class="text-center">
+                    <p id="form-message">
+                        Fill out the areas that contains <span class="text-weight-bold"><i class="fas fa-times"></i></span>
+                        with the appropriate information
+                    </p>
+                </div>
+                <form name="purchase">
+                    <div>
+                        <!-- firstname input -->
+                        <div class="d-block text-center">Firstname<br />
+                            <input class="inputs" class="invalid" type="text" id="customer-firstname" placeholder="John">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
+                        </div>
+                        <!-- lastname input -->
+                        <div class="d-block text-center">Lastname<br />
+                            <input class="inputs" type="text" id="customer-lastname" placeholder="Doe">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
+                        </div>
+                        <!-- email address -->
+                        <div class="d-block text-center">Email<br />
+                            <input class="inputs" type="email" id="customer-email" placeholder="john@doe.com">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
 
-                    </div>
-                    <!-- phone number -->
-                    <div class="d-block text-center">Phone Number<br />
-                        <span class="invalid" id="phone-number">
-                            <input id="area-code" type="text" placeholder="(xxx)" minlength="3" maxlength="3">
-                            <span>-</span>
-                            <input id="prefix" type="text" placeholder="xxx" maxlength="3">
-                            <span>-</span>
-                            <input id="line-number" type="text" placeholder="xxxx" maxlength="4">
-                        </span>
+                        </div>
+                        <!-- phone number -->
+                        <div class="d-block text-center">Phone Number<br />
+                            <span class="invalid" id="phone-number">
+                                <input id="area-code" type="text" placeholder="(xxx)" minlength="3" maxlength="3">
+                                <span>-</span>
+                                <input id="prefix" type="text" placeholder="xxx" maxlength="3">
+                                <span>-</span>
+                                <input id="line-number" type="text" placeholder="xxxx" maxlength="4">
+                            </span>
 
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
-                    </div>
-                    <!-- street address -->
-                    <div class="d-block text-center">Street Address<br />
-                        <input class="inputs" type="text" id="customer-street" placeholder="123 Doe Rd.">
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
-                    </div>
-                    <!-- city -->
-                    <div class="d-block text-center">City<br />
-                        <input class="inputs" type="text" id="customer-city" placeholder="Johnville">
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
-                    </div>
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
+                        </div>
+                        <!-- street address -->
+                        <div class="d-block text-center">Street Address<br />
+                            <input class="inputs" type="text" id="customer-street" placeholder="123 Doe Rd.">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
+                        </div>
+                        <!-- city -->
+                        <div class="d-block text-center">City<br />
+                            <input class="inputs" type="text" id="customer-city" placeholder="Johnville">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
+                        </div>
 
-                    <div class="d-block text-center">State<br />
-                        <select>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                        <span><i class="fas fa-check"></i></span>
+                        <div class="d-block text-center">State<br />
+                            <select>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <span><i class="fas fa-check"></i></span>
 
-                    </div>
+                        </div>
 
-                    <div class="d-block text-center">Zip Code<br />
-                        <input class="inputs" type="text" id="customer-zip" placeholder="12345" maxlength="5">
-                        <span class="check"><i class="fas fa-check"></i></span>
-                        <span class="x-mark"><i class="fas fa-times"></i></span>
-                    </div>
-
-
-                    <div class="text-center">
-                        <input type="radio" name="payment" id="cash" checked>
-                        <label>Cash</label>
-                        <input type="radio" name="payment" id="check">
-                        <label>Check</label>
-                        <input type="radio" name="payment" id="card">
-                        <label>Card</label>
-                        <br />
-
-                    </div>
-                    <div class="text-center">
-                        <button id="cancel" class="m-1">Cancel</button>
-                        <button type="submit" class="m-1" id="submit">Submit</button>
-                    </div>
+                        <div class="d-block text-center">Zip Code<br />
+                            <input class="inputs" type="text" id="customer-zip" placeholder="12345" maxlength="5">
+                            <span class="check"><i class="fas fa-check"></i></span>
+                            <span class="x-mark"><i class="fas fa-times"></i></span>
+                        </div>
 
 
+                        <div class="text-center">
+                            <input type="radio" name="payment" id="cash" checked>
+                            <label>Cash</label>
+                            <input type="radio" name="payment" id="check">
+                            <label>Check</label>
+                            <input type="radio" name="payment" id="card">
+                            <label>Card</label>
+                            <br />
 
-            </form>
+                        </div>
+                        <div class="text-center">
+                            <button id="cancel" class="m-1">Cancel</button>
+                            <button type="submit" class="m-1" id="submit">Submit</button>
+                        </div>
 
+
+
+                </form>
+
+                </div>
             </div>
         </div>
 
         <div id="thank-you" class="text-center">
-            <p>Your order has been placed</p>
-            <div id="animation" class="container">
-                <div id="ball"></div>
-                <div id="net"></div>
+            <div id="thank-you-content" class="mx-auto">
+                <p>Your order has been placed</p>
+                <div id="animation" class="container">
+                    <div id="ball"></div>
+                    <div id="net"></div>
+                </div>
+                <button id="refresh-button">Return to site</button>
             </div>
-            <button id="refresh-button">Return to site</button>
         </div>
+
 
 
         <!-- The navbar ontop of the page that contains the shopping cart button -->
