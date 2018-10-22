@@ -228,6 +228,9 @@ main {
         padding: 3px;
         margin-right: 20px;
     }
+    #menu-head {
+        width: 250px;
+    }
 }
 
 @media screen and (min-width: 575px) {
@@ -239,6 +242,9 @@ main {
         padding: 3px;
         margin-right: 20px;
     }
+    #menu-head {
+        width: 500px;
+    }
 }
 
 #cart-item {
@@ -249,6 +255,8 @@ main {
 #menu-head {
     background-color: var(--secondary-color);
     color: white;
+    position: fixed;
+    z-index: 2;
     font-size: 1.2rem;
     border-bottom: 3px solid black;
 }
