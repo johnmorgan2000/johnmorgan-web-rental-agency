@@ -73,9 +73,11 @@ form[name="purchase"] select {
     padding: 3px;
 }
 
+.inputs,
 form[name="purchase"] select {
     width: 204px;
     height: 34px;
+    background-color: white;
 }
 
 .fa-check {
